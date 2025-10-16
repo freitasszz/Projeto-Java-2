@@ -1,0 +1,32 @@
+### GET all estudantes
+GET http://localhost:8080/estudantes
+
+### GET estudante by id
+GET http://localhost:8080/estudantes/1
+
+### POST new estudante
+POST http://localhost:8080/estudantes
+Content-Type: application/json
+
+{
+  "id": 11,
+  "nome": "Aluno Teste",
+  "email": "aluno@teste.com",
+  "nascimento": "2003-01-01",
+  "anoIngresso": 2022
+}
+
+### PUT update estudante
+PUT http://localhost:8080/estudantes/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "nome": "Carlos H. Lima",
+  "email": "carlos.lima@update.com",
+  "nascimento": "2001-10-22",
+  "anoIngresso": 2019
+}
+
+### DELETE estudante
+DELETE http://localhost:8080/estudantes/10

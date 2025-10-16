@@ -1,0 +1,34 @@
+### GET all vagas
+GET http://localhost:8080/vagas
+
+### GET vaga by id
+GET http://localhost:8080/vagas/1
+
+### POST new vaga
+POST http://localhost:8080/vagas
+Content-Type: application/json
+
+{
+  "id": 8,
+  "titulo": "DevOps",
+  "descricao": "Atuação com CI/CD e cloud",
+  "publicacao": "2025-10-10",
+  "ativo": true,
+  "idEmpresa": 2
+}
+
+### PUT update vaga
+PUT http://localhost:8080/vagas/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "titulo": "Engenheiro de Software Senior",
+  "descricao": "Atualizado",
+  "publicacao": "2025-10-03",
+  "ativo": true,
+  "idEmpresa": 3
+}
+
+### DELETE vaga
+DELETE http://localhost:8080/vagas/7

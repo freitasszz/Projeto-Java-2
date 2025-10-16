@@ -1,0 +1,30 @@
+### GET all empresas
+GET http://localhost:8080/empresas
+
+### GET empresa by id
+GET http://localhost:8080/empresas/1
+
+### POST new empresa
+POST http://localhost:8080/empresas
+Content-Type: application/json
+
+{
+  "id": 6,
+  "nome": "Nova Empresa",
+  "cnpj": "99.999.999/0001-99",
+  "emailContato": "nova@empresa.com"
+}
+
+### PUT update empresa
+PUT http://localhost:8080/empresas/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "nome": "Beta Comércio LTDA",
+  "cnpj": "98.765.432/0001-10",
+  "emailContato": "contato@betacomercio.com"
+}
+
+### DELETE empresa
+DELETE http://localhost:8080/empresas/5
