@@ -1,7 +1,7 @@
 package com.progsist2.projeto.webservice_empresas_estudantes_vagas.controller;
 
 import org.springframework.web.bind.annotation.*;
-import com.progsist2.projeto.model.Estudante;
+import com.progsist2.projeto.webservice_empresas_estudantes_vagas.model.Estudante;
 import java.util.*;
 
 @RestController
