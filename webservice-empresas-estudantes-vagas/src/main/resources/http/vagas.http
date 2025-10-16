@@ -1,34 +1,32 @@
-### GET all vagas
+### Listar todas as vagas
 GET http://localhost:8080/vagas
 
-### GET vaga by id
+### Buscar vaga por ID
 GET http://localhost:8080/vagas/1
 
-### POST new vaga
+### Adicionar nova vaga
 POST http://localhost:8080/vagas
 Content-Type: application/json
 
 {
-  "id": 8,
-  "titulo": "DevOps",
-  "descricao": "Atuação com CI/CD e cloud",
-  "publicacao": "2025-10-10",
-  "ativo": true,
-  "idEmpresa": 2
-}
-
-### PUT update vaga
-PUT http://localhost:8080/vagas/3
-Content-Type: application/json
-
-{
-  "id": 3,
-  "titulo": "Engenheiro de Software Senior",
-  "descricao": "Atualizado",
-  "publicacao": "2025-10-03",
+  "titulo": "Estagiário de TI",
+  "descricao": "Suporte a projetos internos e testes de software.",
+  "publicacao": "2025-10-15",
   "ativo": true,
   "idEmpresa": 3
 }
 
-### DELETE vaga
-DELETE http://localhost:8080/vagas/7
+### Atualizar vaga existente
+PUT http://localhost:8080/vagas/2
+Content-Type: application/json
+
+{
+  "titulo": "Analista de Suporte Técnico Jr",
+  "descricao": "Atendimento remoto e manutenção de sistemas.",
+  "publicacao": "2025-09-27",
+  "ativo": true,
+  "idEmpresa": 2
+}
+
+### Deletar vaga
+DELETE http://localhost:8080/vagas/4

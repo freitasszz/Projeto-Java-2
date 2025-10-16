@@ -1,32 +1,30 @@
-### GET all estudantes
+### Listar todos os estudantes
 GET http://localhost:8080/estudantes
 
-### GET estudante by id
+### Buscar estudante por ID
 GET http://localhost:8080/estudantes/1
 
-### POST new estudante
+### Adicionar novo estudante
 POST http://localhost:8080/estudantes
 Content-Type: application/json
 
 {
-  "id": 11,
-  "nome": "Aluno Teste",
-  "email": "aluno@teste.com",
-  "nascimento": "2003-01-01",
-  "anoIngresso": 2022
+  "nome": "Novo Estudante",
+  "email": "novo.estudante@email.com",
+  "dataNascimento": "2004-05-10",
+  "anoIngresso": 2023
 }
 
-### PUT update estudante
+### Atualizar estudante
 PUT http://localhost:8080/estudantes/2
 Content-Type: application/json
 
 {
-  "id": 2,
-  "nome": "Carlos H. Lima",
-  "email": "carlos.lima@update.com",
-  "nascimento": "2001-10-22",
+  "nome": "Carlos Lima Atualizado",
+  "email": "carlos.novo@email.com",
+  "dataNascimento": "2001-10-22",
   "anoIngresso": 2019
 }
 
-### DELETE estudante
-DELETE http://localhost:8080/estudantes/10
+### Deletar estudante
+DELETE http://localhost:8080/estudantes/3

@@ -1,30 +1,28 @@
-### GET all empresas
+### Listar todas as empresas
 GET http://localhost:8080/empresas
 
-### GET empresa by id
+### Buscar empresa por ID
 GET http://localhost:8080/empresas/1
 
-### POST new empresa
+### Adicionar nova empresa
 POST http://localhost:8080/empresas
 Content-Type: application/json
 
 {
-  "id": 6,
-  "nome": "Nova Empresa",
-  "cnpj": "99.999.999/0001-99",
-  "emailContato": "nova@empresa.com"
+  "nome": "Nova Empresa Ltda",
+  "cnpj": "12.111.222/0001-33",
+  "emailContato": "contato@novaempresa.com"
 }
 
-### PUT update empresa
+### Atualizar empresa existente
 PUT http://localhost:8080/empresas/2
 Content-Type: application/json
 
 {
-  "id": 2,
-  "nome": "Beta Comércio LTDA",
+  "nome": "Beta Comércio Atualizado ME",
   "cnpj": "98.765.432/0001-10",
-  "emailContato": "contato@betacomercio.com"
+  "emailContato": "novo@beta.com"
 }
 
-### DELETE empresa
-DELETE http://localhost:8080/empresas/5
+### Deletar empresa
+DELETE http://localhost:8080/empresas/3
