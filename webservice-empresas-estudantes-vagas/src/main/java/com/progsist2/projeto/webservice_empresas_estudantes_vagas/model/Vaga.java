@@ -1,4 +1,4 @@
-package com.progsist2.projeto.model;
+package com.progsist2.projeto.webservice_empresas_estudantes_vagas.model;
 
 public class Vaga {
     private int id;
