@@ -16,7 +16,7 @@ public class Vaga {
     private String descricao;
     private String publicacao;
     private boolean ativo;
-    private Long idEmpresa; // relação simples (por enquanto só armazena o ID da empresa)
+    private Long idEmpresa; 
 
     public Vaga() {}
 
