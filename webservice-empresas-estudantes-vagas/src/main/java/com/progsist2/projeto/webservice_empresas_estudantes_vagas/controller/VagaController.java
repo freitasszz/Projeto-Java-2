@@ -77,7 +77,8 @@ public class VagaController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @SuppressWarnings("null")
+	@DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (vagaRepo.existsById(id)) { vagaRepo.deleteById(id); return ResponseEntity.noContent().build(); }
         return ResponseEntity.notFound().build();

@@ -35,7 +35,8 @@ public class AreaController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @SuppressWarnings("null")
+	@DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); }
         return ResponseEntity.notFound().build();

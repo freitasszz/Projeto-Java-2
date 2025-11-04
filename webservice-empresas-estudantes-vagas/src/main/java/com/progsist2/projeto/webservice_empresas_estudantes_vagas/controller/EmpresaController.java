@@ -17,6 +17,7 @@ public class EmpresaController {
     @GetMapping
     public List<Empresa> listar() { return repo.findAll(); }
 
+    @SuppressWarnings("null")
     @GetMapping("/{id}")
     public ResponseEntity<Empresa> buscar(@PathVariable Long id) {
         return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
@@ -24,10 +25,12 @@ public class EmpresaController {
 
     @PostMapping
     public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) {
+        @SuppressWarnings("null")
         Empresa salvo = repo.save(empresa);
         return ResponseEntity.ok(salvo);
     }
 
+    @SuppressWarnings("null")
     @PutMapping("/{id}")
     public ResponseEntity<Empresa> atualizar(@PathVariable Long id, @RequestBody Empresa dados) {
         return repo.findById(id).map(existing -> {
@@ -40,6 +43,7 @@ public class EmpresaController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @SuppressWarnings("null")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); }

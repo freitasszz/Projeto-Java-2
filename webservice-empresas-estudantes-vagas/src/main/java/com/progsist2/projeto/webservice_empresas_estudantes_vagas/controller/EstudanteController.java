@@ -72,6 +72,7 @@ public class EstudanteController {
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @SuppressWarnings("null")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (estudanteRepo.existsById(id)) { estudanteRepo.deleteById(id); return ResponseEntity.noContent().build(); }
