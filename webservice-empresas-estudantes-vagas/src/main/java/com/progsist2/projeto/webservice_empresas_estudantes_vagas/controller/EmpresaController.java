@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/empresas")
 public class EmpresaController {
+
     @Autowired
     private EmpresaRepo repo;
 
@@ -17,14 +18,31 @@ public class EmpresaController {
     public List<Empresa> listar() { return repo.findAll(); }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Empresa> buscar(@PathVariable Long id) { return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); }
+    public ResponseEntity<Empresa> buscar(@PathVariable Long id) {
+        return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
     @PostMapping
-    public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) { return ResponseEntity.ok(repo.save(empresa)); }
+    public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) {
+        Empresa salvo = repo.save(empresa);
+        return ResponseEntity.ok(salvo);
+    }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Empresa> atualizar(@PathVariable Long id, @RequestBody Empresa dados) { return repo.findById(id).map(existing -> { existing.setNomeFantasia(dados.getNomeFantasia()); existing.setCnpj(dados.getCnpj()); existing.setEmailContato(dados.getEmailContato()); existing.setEndereco(dados.getEndereco()); existing.setDescricao(dados.getDescricao()); return ResponseEntity.ok(repo.save(existing)); }).orElseGet(() -> ResponseEntity.notFound().build()); }
+    public ResponseEntity<Empresa> atualizar(@PathVariable Long id, @RequestBody Empresa dados) {
+        return repo.findById(id).map(existing -> {
+            existing.setNomeFantasia(dados.getNomeFantasia());
+            existing.setCnpj(dados.getCnpj());
+            existing.setEmailContato(dados.getEmailContato());
+            existing.setEndereco(dados.getEndereco());
+            existing.setDescricao(dados.getDescricao());
+            return ResponseEntity.ok(repo.save(existing));
+        }).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) { if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); } return ResponseEntity.notFound().build(); }
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); }
+        return ResponseEntity.notFound().build();
+    }
 }

@@ -1,30 +1,12 @@
-### Listar todos os estudantes
 GET http://localhost:8080/estudantes
 
-### Buscar estudante por ID
-GET http://localhost:8080/estudantes/1
-
-### Adicionar novo estudante
 POST http://localhost:8080/estudantes
 Content-Type: application/json
 
 {
-  "nome": "Novo Estudante",
-  "email": "novo.estudante@email.com",
-  "dataNascimento": "2004-05-10",
-  "anoIngresso": 2023
+  "nome":"Ana Paula Souza",
+  "email":"ana.souza@email.com",
+  "nascimento":"2002-03-15",
+  "anoIngresso":2020,
+  "areaId": 1
 }
-
-### Atualizar estudante
-PUT http://localhost:8080/estudantes/2
-Content-Type: application/json
-
-{
-  "nome": "Carlos Lima Atualizado",
-  "email": "carlos.novo@email.com",
-  "dataNascimento": "2001-10-22",
-  "anoIngresso": 2019
-}
-
-### Deletar estudante
-DELETE http://localhost:8080/estudantes/3
