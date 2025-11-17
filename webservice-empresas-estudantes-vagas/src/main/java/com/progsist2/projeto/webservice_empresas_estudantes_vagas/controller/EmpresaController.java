@@ -10,43 +10,21 @@ import java.util.List;
 @RestController
 @RequestMapping("/empresas")
 public class EmpresaController {
-
     @Autowired
     private EmpresaRepo repo;
 
     @GetMapping
     public List<Empresa> listar() { return repo.findAll(); }
 
-    @SuppressWarnings("null")
     @GetMapping("/{id}")
-    public ResponseEntity<Empresa> buscar(@PathVariable Long id) {
-        return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+    public ResponseEntity<Empresa> buscar(@PathVariable Long id) { return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); }
 
     @PostMapping
-    public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) {
-        @SuppressWarnings("null")
-        Empresa salvo = repo.save(empresa);
-        return ResponseEntity.ok(salvo);
-    }
+    public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) { return ResponseEntity.ok(repo.save(empresa)); }
 
-    @SuppressWarnings("null")
     @PutMapping("/{id}")
-    public ResponseEntity<Empresa> atualizar(@PathVariable Long id, @RequestBody Empresa dados) {
-        return repo.findById(id).map(existing -> {
-            existing.setNomeFantasia(dados.getNomeFantasia());
-            existing.setCnpj(dados.getCnpj());
-            existing.setEmailContato(dados.getEmailContato());
-            existing.setEndereco(dados.getEndereco());
-            existing.setDescricao(dados.getDescricao());
-            return ResponseEntity.ok(repo.save(existing));
-        }).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+    public ResponseEntity<Empresa> atualizar(@PathVariable Long id, @RequestBody Empresa dados) { return repo.findById(id).map(existing -> { existing.setNomeFantasia(dados.getNomeFantasia()); existing.setCnpj(dados.getCnpj()); existing.setEmailContato(dados.getEmailContato()); existing.setEndereco(dados.getEndereco()); existing.setDescricao(dados.getDescricao()); return ResponseEntity.ok(repo.save(existing)); }).orElseGet(() -> ResponseEntity.notFound().build()); }
 
-    @SuppressWarnings("null")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); }
-        return ResponseEntity.notFound().build();
-    }
+    public ResponseEntity<Void> deletar(@PathVariable Long id) { if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); } return ResponseEntity.notFound().build(); }
 }

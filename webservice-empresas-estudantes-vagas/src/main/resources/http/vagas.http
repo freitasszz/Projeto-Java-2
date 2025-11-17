@@ -1,13 +1,2 @@
+### GET all vagas
 GET http://localhost:8080/vagas
-
-POST http://localhost:8080/vagas
-Content-Type: application/json
-
-{
-  "titulo":"Desenvolvedor Java",
-  "descricao":"APIs REST com Spring Boot",
-  "publicacao":"2025-10-01",
-  "ativo": true,
-  "empresaId": 1,
-  "areaId": 1
-}

@@ -1,17 +1,3 @@
-### GET all
+### GET all empresas
 GET http://localhost:8080/empresas
-
-### POST create
-POST http://localhost:8080/empresas
-Content-Type: application/json
-
-{
-  "nomeFantasia": "Empresa Alfa LTDA",
-  "cnpj": "12.345.678/0001-90",
-  "emailContato": "contato@empresa-alfa.com",
-  "endereco": "Av A, 100",
-  "descricao": "Empresa Alfa"
-}
-
-### GET by id
-GET http://localhost:8080/empresas/1
+...

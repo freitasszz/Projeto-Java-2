@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "vaga_estagio")
+@Table(name = "vaga")
 public class Vaga {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,8 +27,9 @@ public class Vaga {
     @JoinColumn(name = "area_id")
     private Area area;
 
-    public VagaEstagio() {}
-    public VagaEstagio(Long id, String titulo, String descricao, LocalDate publicacao, boolean ativo, Empresa empresa, Area area) {
+    public Vaga() { }
+
+    public Vaga(Long id, String titulo, String descricao, LocalDate publicacao, boolean ativo, Empresa empresa, Area area) {
         this.id = id; this.titulo = titulo; this.descricao = descricao; this.publicacao = publicacao; this.ativo = ativo; this.empresa = empresa; this.area = area;
     }
 

@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "estudante")
 public class Estudante {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,7 +12,7 @@ public class Estudante {
     private String nome;
     private String email;
     private String nascimento;
-    
+
     @Column(name = "ano_ingresso")
     private int anoIngresso;
 
@@ -21,14 +20,10 @@ public class Estudante {
     @JoinColumn(name = "area_id")
     private Area area;
 
-    public Estudante() {}
+    public Estudante() { }
+
     public Estudante(Long id, String nome, String email, String nascimento, int anoIngresso, Area area) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.nascimento = nascimento;
-        this.anoIngresso = anoIngresso;
-        this.area = area;
+        this.id = id; this.nome = nome; this.email = email; this.nascimento = nascimento; this.anoIngresso = anoIngresso; this.area = area;
     }
 
     public Long getId() { return id; }

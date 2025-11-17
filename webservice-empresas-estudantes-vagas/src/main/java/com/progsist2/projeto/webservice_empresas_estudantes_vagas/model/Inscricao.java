@@ -6,7 +6,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "inscricao")
 public class Inscricao {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,10 +24,11 @@ public class Inscricao {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vaga_id")
-    private VagaEstagio vaga;
+    private Vaga vaga;
 
-    public Inscricao() {}
-    public Inscricao(Long id, LocalDate dataInscricao, String status, String mensagemApresentacao, Estudante estudante, VagaEstagio vaga) {
+    public Inscricao() { }
+
+    public Inscricao(Long id, LocalDate dataInscricao, String status, String mensagemApresentacao, Estudante estudante, Vaga vaga) {
         this.id = id; this.dataInscricao = dataInscricao; this.status = status; this.mensagemApresentacao = mensagemApresentacao; this.estudante = estudante; this.vaga = vaga;
     }
 
@@ -42,6 +42,6 @@ public class Inscricao {
     public void setMensagemApresentacao(String mensagemApresentacao) { this.mensagemApresentacao = mensagemApresentacao; }
     public Estudante getEstudante() { return estudante; }
     public void setEstudante(Estudante estudante) { this.estudante = estudante; }
-    public VagaEstagio getVaga() { return vaga; }
-    public void setVaga(VagaEstagio vaga) { this.vaga = vaga; }
+    public Vaga getVaga() { return vaga; }
+    public void setVaga(Vaga vaga) { this.vaga = vaga; }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/areas")
 public class AreaController {
-
     @Autowired
     private AreaRepo repo;
 
@@ -18,27 +17,14 @@ public class AreaController {
     public List<Area> listar() { return repo.findAll(); }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Area> buscar(@PathVariable Long id) {
-        return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+    public ResponseEntity<Area> buscar(@PathVariable Long id) { return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); }
 
     @PostMapping
-    public ResponseEntity<Area> criar(@RequestBody Area area) {
-        return ResponseEntity.ok(repo.save(area));
-    }
+    public ResponseEntity<Area> criar(@RequestBody Area dados) { return ResponseEntity.ok(repo.save(dados)); }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Area> atualizar(@PathVariable Long id, @RequestBody Area dados) {
-        return repo.findById(id).map(existing -> {
-            existing.setNome(dados.getNome());
-            return ResponseEntity.ok(repo.save(existing));
-        }).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+    public ResponseEntity<Area> atualizar(@PathVariable Long id, @RequestBody Area dados) { return repo.findById(id).map(existing -> { existing.setNome(dados.getNome()); return ResponseEntity.ok(repo.save(existing)); }).orElseGet(() -> ResponseEntity.notFound().build()); }
 
-    @SuppressWarnings("null")
-	@DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); }
-        return ResponseEntity.notFound().build();
-    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) { if (repo.existsById(id)) { repo.deleteById(id); return ResponseEntity.noContent().build(); } return ResponseEntity.notFound().build(); }
 }
