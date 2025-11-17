@@ -1,3 +1,32 @@
-### GET all empresas
+### Listar empresas
 GET http://localhost:8080/empresas
-...
+
+### Criar empresa
+POST http://localhost:8080/empresas
+Content-Type: application/json
+
+{
+  "nomeFantasia": "Empresa Alfa LTDA",
+  "cnpj": "12.345.678/0001-90",
+  "emailContato": "contato@empresa-alfa.com",
+  "endereco": "Av A, 100",
+  "descricao": "Alfa description"
+}
+
+### Buscar empresa
+GET http://localhost:8080/empresas/1
+
+### Atualizar empresa
+PUT http://localhost:8080/empresas/1
+Content-Type: application/json
+
+{
+  "nomeFantasia": "Empresa Alfa Atualizada",
+  "cnpj": "12.345.678/0001-90",
+  "emailContato": "novo@empresa-alfa.com",
+  "endereco": "Av A, 100",
+  "descricao": "Atualizada"
+}
+
+### Deletar empresa
+DELETE http://localhost:8080/empresas/1

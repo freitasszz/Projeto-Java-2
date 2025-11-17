@@ -1,2 +1,27 @@
-### GET all vagas
 GET http://localhost:8080/vagas
+
+POST http://localhost:8080/vagas
+Content-Type: application/json
+
+{
+  "titulo":"Estágio TI",
+  "descricao":"Estágio em desenvolvimento Java",
+  "publicacao":"2025-10-01",
+  "ativo": true,
+  "empresaId": 1
+}
+
+GET http://localhost:8080/vagas/1
+
+PUT http://localhost:8080/vagas/1
+Content-Type: application/json
+
+{
+  "titulo":"Estágio TI - atualizado",
+  "descricao":"Descrição nova",
+  "publicacao":"2025-10-02",
+  "ativo": true,
+  "empresaId": 1
+}
+
+DELETE http://localhost:8080/vagas/1

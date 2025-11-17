@@ -1,2 +1,12 @@
-### GET all inscricoes
 GET http://localhost:8080/inscricoes
+
+POST http://localhost:8080/inscricoes
+Content-Type: application/json
+
+{
+  "estudanteId": "1",
+  "vagaId": "1",
+  "mensagemApresentacao": "Tenho experiência com Java."
+}
+
+DELETE http://localhost:8080/inscricoes/1
