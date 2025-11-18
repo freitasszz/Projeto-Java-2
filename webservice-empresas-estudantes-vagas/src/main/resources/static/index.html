@@ -416,7 +416,7 @@
         </header>
 
         <div class="api-config">
-            <input type="text" id="apiUrl" placeholder="URL da API (ex: https://seu-codespace.app.github.dev)" value="https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev">
+            <input type="text" id="apiUrl" placeholder="URL da API" value="">
             <button class="btn btn-primary" onclick="app.carregarTudo()">🔄 Carregar Dados</button>
         </div>
 
@@ -497,8 +497,14 @@
             },
 
             async fetch(endpoint, options = {}) {
-                this.baseUrl = document.getElementById('apiUrl').value;
-                const url = `${this.baseUrl}${endpoint}`;
+    let baseUrl = document.getElementById('apiUrl').value.trim();
+    
+    
+    if (!baseUrl) {
+        baseUrl = '';
+    }
+    
+    const url = `${baseUrl}${endpoint}`;
                 
                 try {
                     const response = await fetch(url, options);
