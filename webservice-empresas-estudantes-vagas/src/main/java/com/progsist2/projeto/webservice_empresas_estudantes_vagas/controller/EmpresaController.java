@@ -14,10 +14,10 @@ public class EmpresaController {
     private EmpresaRepo repo;
 
     @GetMapping
-    public List<Empresa> listar() { return repo.findAll(); }
+    public List<EmpresaRepo> listar() { return repo.findAll(); }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Empresa> buscar(@PathVariable Long id) { return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); }
+    public ResponseEntity<EmpresaRepo> buscar(@PathVariable Long id) { return repo.findById(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build()); }
 
     @PostMapping
     public ResponseEntity<Empresa> criar(@RequestBody Empresa empresa) { return ResponseEntity.ok(repo.save(empresa)); }
