@@ -1,8 +1,8 @@
 ### Listar inscrições
-GET http://localhost:8080/inscricoes
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/inscricoes
 
 ### Criar inscrição
-POST http://localhost:8080/inscricoes
+POST https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/inscricoes
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ### Buscar inscrição
-GET http://localhost:8080/inscricoes/1
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/inscricoes/1
 
 ### Deletar inscrição
-DELETE http://localhost:8080/inscricoes/1
+DELETE https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/inscricoes/1

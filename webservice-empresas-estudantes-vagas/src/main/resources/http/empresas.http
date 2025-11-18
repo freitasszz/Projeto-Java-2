@@ -1,8 +1,8 @@
 ### Listar empresas
-GET http://localhost:8080/empresas
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/empresas
 
 ### Criar empresa
-POST http://localhost:8080/empresas
+POST https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/empresas
 Content-Type: application/json
 
 {
@@ -14,10 +14,10 @@ Content-Type: application/json
 }
 
 ### Buscar empresa
-GET http://localhost:8080/empresas/1
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/empresas/1
 
 ### Atualizar empresa
-PUT http://localhost:8080/empresas/1
+PUT https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/empresas/1
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### Deletar empresa
-DELETE http://localhost:8080/empresas/1
+DELETE https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/empresas/1

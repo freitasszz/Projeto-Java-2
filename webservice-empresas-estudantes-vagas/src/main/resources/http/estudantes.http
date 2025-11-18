@@ -1,6 +1,6 @@
-GET http://localhost:8080/estudantes
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/estudantes
 
-POST http://localhost:8080/estudantes
+POST https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/estudantes
 Content-Type: application/json
 
 {
@@ -10,9 +10,9 @@ Content-Type: application/json
   "anoIngresso":2022
 }
 
-GET http://localhost:8080/estudantes/1
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/estudantes/1
 
-PUT http://localhost:8080/estudantes/1
+PUT https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/estudantes/1
 Content-Type: application/json
 
 {
@@ -22,4 +22,4 @@ Content-Type: application/json
   "anoIngresso":2022
 }
 
-DELETE http://localhost:8080/estudantes/1
+DELETE https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/estudantes/1

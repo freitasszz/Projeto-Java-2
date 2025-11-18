@@ -1,6 +1,6 @@
-GET http://localhost:8080/vagas
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas
 
-POST http://localhost:8080/vagas
+POST https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas
 Content-Type: application/json
 
 {
@@ -11,9 +11,9 @@ Content-Type: application/json
   "empresaId": 1
 }
 
-GET http://localhost:8080/vagas/1
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas/1
 
-PUT http://localhost:8080/vagas/1
+PUT https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas/1
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
   "empresaId": 1
 }
 
-DELETE http://localhost:8080/vagas/1
+DELETE https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas/1
