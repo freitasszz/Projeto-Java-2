@@ -1,8 +1,8 @@
 ### Listar áreas
-GET http://localhost:8080/areas
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/areas
 
 ### Criar área
-POST http://localhost:8080/areas
+POST https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/areas
 Content-Type: application/json
 
 {
@@ -10,10 +10,10 @@ Content-Type: application/json
 }
 
 ### Buscar área
-GET http://localhost:8080/areas/1
+GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/areas/1
 
 ### Atualizar área
-PUT http://localhost:8080/areas/1
+PUT https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/areas/1
 Content-Type: application/json
 
 {
@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ### Deletar área
-DELETE http://localhost:8080/areas/1
+DELETE https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/areas/1
