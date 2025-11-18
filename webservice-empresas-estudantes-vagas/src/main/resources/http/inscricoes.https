@@ -1,5 +1,7 @@
+### Listar inscrições
 GET http://localhost:8080/inscricoes
 
+### Criar inscrição
 POST http://localhost:8080/inscricoes
 Content-Type: application/json
 
@@ -9,4 +11,8 @@ Content-Type: application/json
   "mensagemApresentacao": "Tenho experiência com Java."
 }
 
+### Buscar inscrição
+GET http://localhost:8080/inscricoes/1
+
+### Deletar inscrição
 DELETE http://localhost:8080/inscricoes/1
