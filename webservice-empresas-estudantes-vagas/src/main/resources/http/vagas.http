@@ -11,6 +11,14 @@ Content-Type: application/json
   "empresaId": 1
 }
 
+{
+  "titulo":"Estágio Software",
+  "descricao":"Estágio em Java",
+  "publicacao":"2025-11-21",
+  "ativo": true,
+  "empresaId": 1
+}
+
 GET https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas/1
 
 PUT https://improved-guacamole-4jp795r7w4xhq55g-8080.app.github.dev/vagas/1
