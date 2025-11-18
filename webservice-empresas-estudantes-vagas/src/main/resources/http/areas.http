@@ -1,0 +1,24 @@
+### Listar áreas
+GET http://localhost:8080/areas
+
+### Criar área
+POST http://localhost:8080/areas
+Content-Type: application/json
+
+{
+  "nome": "Design"
+}
+
+### Buscar área
+GET http://localhost:8080/areas/1
+
+### Atualizar área
+PUT http://localhost:8080/areas/1
+Content-Type: application/json
+
+{
+  "nome": "Desenvolvimento Web"
+}
+
+### Deletar área
+DELETE http://localhost:8080/areas/1
